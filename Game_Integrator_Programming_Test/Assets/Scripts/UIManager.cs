@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour//, ISequences
 {
-    public float[] _currentWinningsSequence;
+    //public float[] NewSequence { get; set; }
+
+    public float[] _currentWinningSequence;
+
     [SerializeField] private GameObject _openingTransition;
     [SerializeField] private GameObject _endingTransition;
     [SerializeField] private Transform _crabContainer;
@@ -19,11 +22,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int _crabNumberChecker = -1;
     [SerializeField] private int _countdownCurrentTime = 20;
 
+
+
+
     private void Start()
     {
         StartCoroutine(DisableTransitionAnimation());
         StartCoroutine(PickACrabCountdown());
-        //_currentWinningsSequence[] = SelectedSequence[];
     }
 
     private void Update()
@@ -37,14 +42,14 @@ public class UIManager : MonoBehaviour
     public void UpdateCrabCount(int crabCount)
     {
         _numberOfCrabsPicked = crabCount;
-        _totalWinningsAmmount += _currentWinningsSequence[_numberOfCrabsPicked];
+        _totalWinningsAmmount += _currentWinningSequence[_numberOfCrabsPicked];
         _totalWinningsSignText.text = "$" + _totalWinningsAmmount + ".00";
         _youWonSignWinningsText.text = "$" + _totalWinningsAmmount + ".00";
     }
 
     private IEnumerator PickACrabCountdown()
     {
-        while (_numberOfCrabsPicked != _currentWinningsSequence.Length - 1)
+        while (_numberOfCrabsPicked != _currentWinningSequence.Length - 1)
         {
             if (_countdownCurrentTime == 0)
             {
@@ -87,5 +92,23 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.25f);
         _openingTransition.SetActive(false);
+    }
+
+    public void TurnCrabButtonsOff()
+    {
+        for (int i = 0; i < _crabContainer.childCount; i++)
+        {
+            Button CrabButton = _crabContainer.GetChild(i).GetChild(0).GetChild(0).GetComponent<Button>();
+            CrabButton.interactable = false;
+        }
+    }
+
+    public void TurnCrabButtonsOn()
+    {
+        for (int i = 0; i < _crabContainer.childCount; i++)
+        {
+            Button CrabButton = _crabContainer.GetChild(i).GetChild(0).GetChild(0).GetComponent<Button>();
+            CrabButton.interactable = true;
+        }
     }
 }

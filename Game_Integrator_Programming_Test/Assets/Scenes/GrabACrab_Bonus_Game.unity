@@ -262,10 +262,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 254038495}
   m_Layer: 5
   m_Name: Crab (6)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,6 +467,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 575610883}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 137567096}
 --- !u!1 &331694550
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,10 +607,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -817,10 +818,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -936,7 +937,7 @@ GameObject:
   - component: {fileID: 464382920}
   m_Layer: 5
   m_Name: Crab (7)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,6 +981,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 1121327746}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 993671369}
 --- !u!1 &495619023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1233,7 @@ GameObject:
   - component: {fileID: 661152965}
   m_Layer: 5
   m_Name: Crab (2)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1275,6 +1277,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 331694552}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 1250906968}
 --- !u!1 &825374858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1290,7 @@ GameObject:
   - component: {fileID: 825374860}
   m_Layer: 5
   m_Name: Crab (1)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1331,6 +1334,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 25634564}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 458673470}
 --- !u!1 &842243439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1347,7 @@ GameObject:
   - component: {fileID: 842243441}
   m_Layer: 5
   m_Name: Crab (3)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1387,6 +1391,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 1808934202}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 409922804}
 --- !u!1 &852345726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,10 +1626,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2081,10 +2086,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2407,10 +2412,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2491,7 +2496,7 @@ GameObject:
   - component: {fileID: 1313431542}
   m_Layer: 5
   m_Name: Crab (5)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2535,6 +2540,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 1580598008}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 2129005216}
 --- !u!1 &1365956765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,7 +2831,7 @@ GameObject:
   - component: {fileID: 1657461720}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UIManagerObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2930,10 +2936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e3ff7c4d8e4d14391896fb1fc3d131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWinningsSequence:
+  _currentWinningSequence:
   - 9
-  - 2
   - 3
+  - 4
   - 0
   _openingTransition: {fileID: 6922605858709858299}
   _endingTransition: {fileID: 4884081672982119257}
@@ -3933,10 +3939,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4017,7 +4023,7 @@ GameObject:
   - component: {fileID: 2130962070}
   m_Layer: 5
   m_Name: Crab (4)
-  m_TagString: Crab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4061,6 +4067,7 @@ MonoBehaviour:
   _winningsAmmountText: {fileID: 431502261}
   _youWonSign: {fileID: 2042020000}
   _alreadySelectedCrabContainer: {fileID: 459332286}
+  _crabButton: {fileID: 1171729511}
 --- !u!95 &492946812029860707
 Animator:
   serializedVersion: 3
@@ -4112,7 +4119,7 @@ GameObject:
   - component: {fileID: 6398513544280961394}
   - component: {fileID: 6004663326092576276}
   m_Layer: 5
-  m_Name: PickBonus_EndingTransition
+  m_Name: EndingTransition (Keep Inactive)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4188,7 +4195,7 @@ GameObject:
   - component: {fileID: 7522495134086751579}
   - component: {fileID: 492946812029860707}
   m_Layer: 5
-  m_Name: PickBonus_OpeningTransition
+  m_Name: OpeningTransition (Keep Active)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
