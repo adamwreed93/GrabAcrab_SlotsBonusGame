@@ -6,15 +6,21 @@ public class ActiveSequence : MonoBehaviour
 {
     private ISequence _activeSequence;
 
-    public ISequence GetSequence => _activeSequence;
-
-  
+    //public ISequence GetSequence => _activeSequence;
+    public ISequence GetSequence()
+    {
+        foreach (var e in _activeSequence.Sequence)
+        {
+            Debug.Log(e);
+        }
+        return _activeSequence;
+    }
 
     public OverrideSequence overRideSequence;
 
+
     private void Awake()
     {
-
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -29,10 +35,7 @@ public class ActiveSequence : MonoBehaviour
         }
         
       
-       foreach(var e in _activeSequence.Sequence)
-        {
-            Debug.Log(e);
-        }
+    
     }
 
 

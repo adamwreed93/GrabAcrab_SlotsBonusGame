@@ -21,12 +21,23 @@ public class Crabs : MonoBehaviour
     public static int _numberOfCrabsSelected = -1; //This tracks how many crabs have been picked and thus which number we are on in the sequence array. It starts at -1 so that as soon as you select your first crab it becomes the 0 object in the array.
     private bool _isGameOver; //Becomes true after you finish the sequence of winnings in the bonus game.
 
+    private GameManager _gameManager;
+    private float[] _sequence;
 
 
     private void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         uiManager = _uiManager.GetComponent<UIManager>();
+        _sequence = _gameManager.GetActiveSequence.Sequence;
         StartCoroutine(HiddenCrabAnimations());
+        _canSelectCrab = true;
+        _numberOfCrabsSelected = -1;
+
+        if (_gameManager == null)
+        {
+            Debug.LogError("GameManager is NULL!");
+        }
 
         if (uiManager == null)
         {
@@ -65,8 +76,13 @@ public class Crabs : MonoBehaviour
 
     public void ClickedOnCrab() //This is called when the player selects a crab during the bonus game.
     {
-        if (_canSelectCrab == true && _numberOfCrabsSelected < uiManager.GetActiveSequence.Sequence.Length -1 && _isGameOver == false)
+        //Debug.Log("Checkpoint 1");
+        Debug.Log(_numberOfCrabsSelected + " " + _sequence.Length + " " + _canSelectCrab + " " + _isGameOver);
+        //Debug.Log(_canSelectCrab + " " + _isGameOver);
+
+        if (_canSelectCrab == true && _numberOfCrabsSelected < _sequence.Length -1 && _isGameOver == false)
         {
+            //Debug.Log("Checkpoint 2");
             _canSelectCrab = false;
             uiManager.TurnCrabButtonsOff();
             _numberOfCrabsSelected++;
@@ -94,14 +110,14 @@ public class Crabs : MonoBehaviour
 
     public IEnumerator UpdateNextWinningsText()
     {
-        if (_numberOfCrabsSelected < uiManager.GetActiveSequence.Sequence.Length - 1)
+        if (_numberOfCrabsSelected < _sequence.Length - 1)
         {
-            _nextAmmountInSequence = uiManager.GetActiveSequence.Sequence[_numberOfCrabsSelected];
+            _nextAmmountInSequence = _sequence[_numberOfCrabsSelected];
             _winningsAmmountText.text = "$" + _nextAmmountInSequence + ".00";
         }
-        else if (_numberOfCrabsSelected == uiManager.GetActiveSequence.Sequence.Length - 1)
+        else if (_numberOfCrabsSelected == _sequence.Length - 1)
         {
-            _nextAmmountInSequence = uiManager.GetActiveSequence.Sequence[_numberOfCrabsSelected];
+            _nextAmmountInSequence = _sequence[_numberOfCrabsSelected];
             _winningsAmmountText.text = "$" + _nextAmmountInSequence + ".00";
             yield return new WaitForSeconds(2.0f);
             _youWonSign.SetActive(true);

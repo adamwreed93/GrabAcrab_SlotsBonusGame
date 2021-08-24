@@ -22,20 +22,18 @@ public class UIManager : MonoBehaviour//, ISequences
     [SerializeField] private int _crabNumberChecker = -1;
     [SerializeField] private int _countdownCurrentTime = 20;
     
-    private ISequence _activeSequence;
-    public ISequence GetActiveSequence => _activeSequence;
+    private GameManager _gameManager;
 
-    private void Awake()
-    {
-
-        //locate the active sequence 
-        _activeSequence = GameObject.Find("ActiveSequence").GetComponent<ActiveSequence>().GetSequence;
-
-    }
     private void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(DisableTransitionAnimation());
         StartCoroutine(PickACrabCountdown());
+
+        if (_gameManager == null)
+        {
+            Debug.LogError("GameManager is NULL!");
+        }
     }
 
     private void Update()
@@ -49,14 +47,14 @@ public class UIManager : MonoBehaviour//, ISequences
     public void UpdateCrabCount(int crabCount)
     {
         _numberOfCrabsPicked = crabCount;
-        _totalWinningsAmmount += _activeSequence.Sequence[_numberOfCrabsPicked];
+        _totalWinningsAmmount += _gameManager.GetActiveSequence.Sequence[_numberOfCrabsPicked];
         _totalWinningsSignText.text = "$" + _totalWinningsAmmount + ".00";
         _youWonSignWinningsText.text = "$" + _totalWinningsAmmount + ".00";
     }
 
     private IEnumerator PickACrabCountdown()
     {
-        while (_numberOfCrabsPicked != _activeSequence.Sequence.Length - 1)
+        while (_numberOfCrabsPicked != _gameManager.GetActiveSequence.Sequence.Length - 1)
         {
             if (_countdownCurrentTime == 0)
             {
