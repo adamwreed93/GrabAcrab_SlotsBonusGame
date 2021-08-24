@@ -65,7 +65,7 @@ public class Crabs : MonoBehaviour
 
     public void ClickedOnCrab() //This is called when the player selects a crab during the bonus game.
     {
-        if (_canSelectCrab == true && _numberOfCrabsSelected < uiManager._currentWinningSequence.Length -1 && _isGameOver == false)
+        if (_canSelectCrab == true && _numberOfCrabsSelected < uiManager.GetActiveSequence.Sequence.Length -1 && _isGameOver == false)
         {
             _canSelectCrab = false;
             uiManager.TurnCrabButtonsOff();
@@ -94,14 +94,14 @@ public class Crabs : MonoBehaviour
 
     public IEnumerator UpdateNextWinningsText()
     {
-        if (_numberOfCrabsSelected < uiManager._currentWinningSequence.Length - 1)
+        if (_numberOfCrabsSelected < uiManager.GetActiveSequence.Sequence.Length - 1)
         {
-            _nextAmmountInSequence = uiManager._currentWinningSequence[_numberOfCrabsSelected];
+            _nextAmmountInSequence = uiManager.GetActiveSequence.Sequence[_numberOfCrabsSelected];
             _winningsAmmountText.text = "$" + _nextAmmountInSequence + ".00";
         }
-        else if (_numberOfCrabsSelected == uiManager._currentWinningSequence.Length - 1)
+        else if (_numberOfCrabsSelected == uiManager.GetActiveSequence.Sequence.Length - 1)
         {
-            _nextAmmountInSequence = uiManager._currentWinningSequence[_numberOfCrabsSelected];
+            _nextAmmountInSequence = uiManager.GetActiveSequence.Sequence[_numberOfCrabsSelected];
             _winningsAmmountText.text = "$" + _nextAmmountInSequence + ".00";
             yield return new WaitForSeconds(2.0f);
             _youWonSign.SetActive(true);

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public interface ISequences
+public interface ISequence
 {
-    float[] NewSequence { get; set; }
+    float[] Sequence { get; set; }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class UIManager : MonoBehaviour//, ISequences
 {
     //public float[] NewSequence { get; set; }
 
-    public float[] _currentWinningSequence;
 
     [SerializeField] private GameObject _openingTransition;
     [SerializeField] private GameObject _endingTransition;
@@ -21,10 +21,17 @@ public class UIManager : MonoBehaviour//, ISequences
     [SerializeField] private int _numberOfCrabsPicked = -1;
     [SerializeField] private int _crabNumberChecker = -1;
     [SerializeField] private int _countdownCurrentTime = 20;
+    
+    private ISequence _activeSequence;
+    public ISequence GetActiveSequence => _activeSequence;
 
+    private void Awake()
+    {
 
+        //locate the active sequence 
+        _activeSequence = GameObject.Find("ActiveSequence").GetComponent<ActiveSequence>().GetSequence;
 
-
+    }
     private void Start()
     {
         StartCoroutine(DisableTransitionAnimation());
@@ -42,14 +49,14 @@ public class UIManager : MonoBehaviour//, ISequences
     public void UpdateCrabCount(int crabCount)
     {
         _numberOfCrabsPicked = crabCount;
-        _totalWinningsAmmount += _currentWinningSequence[_numberOfCrabsPicked];
+        _totalWinningsAmmount += _activeSequence.Sequence[_numberOfCrabsPicked];
         _totalWinningsSignText.text = "$" + _totalWinningsAmmount + ".00";
         _youWonSignWinningsText.text = "$" + _totalWinningsAmmount + ".00";
     }
 
     private IEnumerator PickACrabCountdown()
     {
-        while (_numberOfCrabsPicked != _currentWinningSequence.Length - 1)
+        while (_numberOfCrabsPicked != _activeSequence.Sequence.Length - 1)
         {
             if (_countdownCurrentTime == 0)
             {
