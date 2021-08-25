@@ -5,24 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class UIManager : MonoBehaviour//, ISequences
+public class UIManager : MonoBehaviour
 {
-    //public float[] NewSequence { get; set; }
-
+    GameManager _gameManager;
 
     [SerializeField] private GameObject _openingTransition;
     [SerializeField] private GameObject _endingTransition;
-    [SerializeField] private Transform _crabContainer;
     [SerializeField] private GameObject _countdownTextObject;
+    [SerializeField] private Transform _crabContainer;
     [SerializeField] private Text _countdownText;
     [SerializeField] private Text _totalWinningsSignText;
     [SerializeField] private Text _youWonSignWinningsText;
-    private float _totalWinningsAmmount;
-    [SerializeField] private int _numberOfCrabsPicked = -1;
-    [SerializeField] private int _crabNumberChecker = -1;
     [SerializeField] private int _countdownCurrentTime = 20;
+
+    private int _numberOfCrabsPicked = -1;
+    private int _crabNumberChecker = -1;
+    private float _totalWinningsAmmount;
+
     
-    private GameManager _gameManager;
 
     private void Start()
     {
@@ -103,7 +103,7 @@ public class UIManager : MonoBehaviour//, ISequences
     {
         for (int i = 0; i < _crabContainer.childCount; i++)
         {
-            Button CrabButton = _crabContainer.GetChild(i).GetChild(0).GetChild(0).GetComponent<Button>();
+            Button CrabButton = _crabContainer.GetChild(i).GetChild(1).GetChild(0).GetComponent<Button>();
             CrabButton.interactable = false;
         }
     }
@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour//, ISequences
     {
         for (int i = 0; i < _crabContainer.childCount; i++)
         {
-            Button CrabButton = _crabContainer.GetChild(i).GetChild(0).GetChild(0).GetComponent<Button>();
+            Button CrabButton = _crabContainer.GetChild(i).GetChild(1).GetChild(0).GetComponent<Button>();
             CrabButton.interactable = true;
         }
     }

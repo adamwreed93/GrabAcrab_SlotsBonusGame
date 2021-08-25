@@ -6,7 +6,6 @@ public class ActiveSequence : MonoBehaviour
 {
     private ISequence _activeSequence;
 
-    //public ISequence GetSequence => _activeSequence;
     public ISequence GetSequence()
     {
         foreach (var e in _activeSequence.Sequence)
@@ -33,10 +32,5 @@ public class ActiveSequence : MonoBehaviour
             _activeSequence.Sequence = new float[overRideSequence.overrideSequence.Length];
             _activeSequence.Sequence = overRideSequence.overrideSequence;            
         }
-        
-      
-    
     }
-
-
 }
