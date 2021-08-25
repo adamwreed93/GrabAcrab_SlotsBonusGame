@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _openingTransition;
     [SerializeField] private GameObject _endingTransition;
+    [SerializeField] private GameObject _buttonContainer;
     [SerializeField] private Animator _girlAnimator;
 
     void Start()
@@ -23,7 +24,12 @@ public class MainMenu : MonoBehaviour
 
 
     public void SequenceSelectedButton()
-    {   
+    {
+        for (int i = 0; i < _buttonContainer.transform.childCount; i++)
+        {
+            _buttonContainer.transform.GetChild(i).gameObject.GetComponent<Button>().interactable = false;
+        }
+        
         StartCoroutine(EnableEndingTransitionAnimation());
     }
 
